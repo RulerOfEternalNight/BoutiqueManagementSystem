@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Add Customers{% endblock %}
+{% block heading %}Add Customers{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div style="margin: 0px 250px;">
+    <form method="post">
+        <div class="mb-3">
+            <label for="billid" class="form-label">Enter the Bill ID</label>
+            <input type="text" class="form-control" name="billid">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

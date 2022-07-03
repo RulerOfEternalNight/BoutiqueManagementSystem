@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Modify Employee Data{% endblock %}
+{% block heading %}Modify Employee Data{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div style="margin: 0px 250px;">
+    <form method="post">
+        <div class="mb-3">
+            <label for="modempid" class="form-label">Employee Id</label>
+            <input type="text" class="form-control" name="modempid">
+        </div>
+        <div class="mb-3">
+            <label for="modempname" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" name="modempname">
+        </div>
+        <div class="mb-3">
+            <label for="modempuname" class="form-label">Employee Username</label>
+            <input type="text" class="form-control" name="modempuname">
+        </div>
+        <div class="mb-3">
+            <label for="modemppass" class="form-label">Employee Password</label>
+            <input type="password" class="form-control" name="modemppass">
+        </div>
+        <div class="mb-3">
+            <label for="modempclr" class="form-label">Clearance level</label>
+            <input type="text" class="form-control" name="modempclr">
+        </div>
+        <div class="mb-3">
+            <label for="modempphnoold" class="form-label">Old Phone Number</label>
+            <input type="text" class="form-control" name="modempphnoold">
+        </div>
+        <div class="mb-3">
+            <label for="modempphno" class="form-label">New Phone Number</label>
+            <input type="text" class="form-control" name="modempphno">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

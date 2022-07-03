@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.12/css/all.css'>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style_products.css')}}">
+
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <div class="grid">
+        <div class="column-xs-12 column-md-10">
+          <p id="highlight">AGHJ Boutique
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product Gallery</p>
+        </div>
+        <div class="column-xs-12 column-md-2">
+          <ul>
+            <li><a href="/user">Back</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="gallery">
+    <div class="container">
+      <div class="grid">
+
+
+        {% for x in range(pm1size) %}
+        <div class="column-xs-12 column-md-4">
+          <figure class="img-container">
+            <img src="{{link[x]}}" />
+            <figcaption class="img-content">
+              <h2 class="title"></h2>
+              <h3 class="category"></h3>
+            </figcaption>
+            <span class="img-content-hover">
+              <h2 class="title">{{pm1r[x][1]}}</h2>
+              <!--name of product-->
+              <h3 class="category">{{pm1r[x][2]}}</h3>
+              <!--type of product-->
+              <p style="font-size: small;">Product ID: {{pm1r[x][0]}} </p>
+              <!--Id of product-->
+              <p style="font-size: small;">Price:
+                {% for y in range(pm2size) %}
+                {% if pm2r[y][0] == pm1r[x][2] %}
+                {{pm2r[y][1]}}
+                {% endif %}
+                {% endfor %}
+              </p>
+              <p style="font-size: small;">Gender:
+                {% for y in range(pm2size) %}
+                {% if pm2r[y][0] == pm1r[x][2] %}
+                {{pm2r[y][2]}}
+                {% endif %}
+                {% endfor %}
+              </p>
+              <p style="font-size: small;">Size:
+                {% for y in range(ps1size) %}
+                {% if ps1r[y][1] == pm1r[x][0] %}
+                {{ps1r[y][0]}},
+                {% endif %}
+                {% endfor %}
+              </p>
+              <p style="font-size: small;">Color:
+                {% for y in range(ps2size) %}
+                {% if ps2r[y][1] == pm1r[x][0] %}
+                {{ps2r[y][0]}},
+                {% endif %}
+                {% endfor %}
+              <p style="font-size: small;">
+                {% if lststock[x] > 0 %}
+                INSTOCK
+                {% endif %}
+                {% if lststock[x] < 0 %}
+                OUT OF STOCK
+                {% endif %}
+              </p>
+            </span>
+          </figure>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+  <script src="{{url_for('static', filename='js/script_products.js')}}"></script>
+
+</body>
+
+</html>

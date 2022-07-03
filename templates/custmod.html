@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Modify Customers{% endblock %}
+{% block heading %}Modify Customers{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div style="margin: 0px 250px;">
+    <form method="post">
+        <div class="mb-3">
+            <label for="custid" class="form-label">Customer Id</label>
+            <input type="text" class="form-control" name="custid" required>
+        </div>
+        <br>
+        <br>
+        <div class="mb-3">
+            <label for="custname" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" name="custname">
+        </div>
+        <div class="mb-3">
+            <label for="custemail" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="custemail">
+        </div>
+        <div class="mb-3">
+            <label for="addr1" class="form-label">Address 1 : House Number</label>
+            <input type="text" class="form-control" name="addr1">
+        </div>
+        <div class="mb-3">
+            <label for="addr2" class="form-label">Address 2 : Street</label>
+            <input type="text" class="form-control" name="addr2">
+        </div>
+        <div class="mb-3">
+            <label for="addr3" class="form-label">Address 3 : Pincode</label>
+            <input type="text" class="form-control" name="addr3">
+        </div>
+        <br>
+        <br>
+        <div class="mb-3">
+            <label for="oldphno" class="form-label">Old Phone Number</label>
+            <input type="text" class="form-control" name="oldphno">
+        </div>
+        <div class="mb-3">
+            <label for="newphno" class="form-label">New Phone Number</label>
+            <input type="text" class="form-control" name="newphno">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

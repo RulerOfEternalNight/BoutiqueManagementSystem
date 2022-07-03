@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style_login.css')}}">
+</head>
+
+<body>
+    <section class="user">
+        <div class="user_options-container">
+            <div class="user_options-text">
+                <div class="user_options-unregistered">
+                    <h2 class="user_unregistered-title">Don't have an account?</h2>
+                    <p class="user_unregistered-text">Request Access</p>
+                    <button class="user_unregistered-signup" id="signup-button">Request Access</button>
+                </div>
+
+                <div class="user_options-registered">
+                    <h2 class="user_registered-title">Have an account?</h2>
+                    <p class="user_registered-text">Login into your account</p>
+                    <button class="user_registered-login" id="login-button">Login</button>
+                </div>
+            </div>
+
+            <div class="user_options-forms" id="user_options-forms">
+                <div class="user_forms-login">
+                    <h2 class="forms_title">Login</h2>
+                    <form class="forms_form" action="#" method="POST">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="Text" placeholder="UserName" name="nm" class="forms_field-input" required
+                                    autofocus />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Password" name="pass" class="forms_field-input"
+                                    required />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <input type="submit" value="Log In" class="forms_buttons-action">
+                        </div>
+                        <br>
+                        <span style="color: red;">
+                            {{errorcode}}
+                        </span>
+                    </form>
+                </div>
+                <div class="user_forms-signup">
+                    <h2 class="forms_title">Request Access</h2>
+                    <form class="forms_form">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="text" placeholder="Full Name" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="email" placeholder="Email" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Password" class="forms_field-input" required />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <input type="submit" value="Request" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{{url_for('static', filename='js/jasc_login.js')}}"></script>
+
+</body>
+
+</html>

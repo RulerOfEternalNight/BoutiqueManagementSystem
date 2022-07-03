@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Boutique Management sysyem</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:900" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style_mainpage.css')}}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style_mainModal.css')}}">
+
+  <style>
+    .fakeimg {
+      background-color: #aaa;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+    }
+
+    .alignMe b {
+      display: inline-block;
+      width: 50%;
+      position: relative;
+      padding-right: 10px;
+      /* Ensures colon does not overlay the text */
+    }
+
+    .alignMe b::after {
+      content: ":";
+      position: absolute;
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body style="background-color: #ffffff;">
+
+  <div class="row">
+
+    <div class="column">
+
+      <div class="container" style="padding: 4px; background-color: #e6e5e1;">
+        <div class="card" id="inventory">
+          <h2>Inventory</h2>
+          <i class="fas fa-arrow-right"></i>
+          <p>Show Product Inventory</p>
+          <div class="pic"
+            style="background-image: url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');">
+          </div>
+          <a href="/products">
+            <button style="background-color: #ef4444">
+            </button>
+          </a>
+        </div>
+        <!------------------------------------------------------------------------------------------------------------------------->
+
+        <div class="card" id="custData">
+          <h2>Customer Details</h2>
+          <i class="fas fa-arrow-right"></i>
+          <p>&nbsp;&nbsp;&nbsp;Show Cuctomer Data</p>
+          <div class="pic"
+            style="background-image: url('https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');">
+          </div>
+          <a href="/customers">
+            <button style="background-color: #d54799 ">
+            </button>
+          </a>
+        </div>
+        <!------------------------------------------------------------------------------------------------------------>
+
+        <!------------------------------------------------------------------------------------------------------------>
+        <div class="card card2" id="returns">
+          <h2>Return Orders</h2>
+          <i class="fas fa-arrow-right"></i>
+          <p>Orders that are returned</p>
+          <div class="pic"
+            style="background-image: url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');">
+          </div>
+          <a href="/returnorder">
+            <button style="background-color: #564cff;">
+            </button>
+          </a>
+          </button>
+        </div>
+
+        <!------------------------------------------------------------------------------------------------------------------------->
+        <div class="card card2" id="bills">
+          <h2>Bills and Collections</h2>
+          <i class="fas fa-arrow-right"></i>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Receipt</p>
+          <div class="pic"
+            style="background-image: url('https://images.unsplash.com/photo-1634733988138-bf2c3a2a13fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80');">
+          </div>
+          <a href="/invoice">
+            <button style="background-color: #DA4D1D;">
+            </button>
+          </a>
+        </div>
+        <!------------------------------------------------------------------------------------------------------------------------->
+      </div>
+      <!---------------------------------------------------------------------------------------------------------->
+    </div>
+    <div class="column" style="width: 66.66%; font-family: 'Trebuchet MS';background-color: white;">
+      <div style="padding: 5px;">
+        <div class="topnav">
+          <!--<a href="#">Update Details</a>
+          <a href="#" onclick="return confirm('You have requested for higher level access. Are you sure?')">Request
+            Permission</a>-->
+          <a href="/logout" style="float:right">Log-out</a>
+          <div id="modal-container">
+            <div class="modal-background">
+              <div class="modal">
+                <h2>Boutique Management System </h2>
+                <p>Done by the team "The 4th Legion"</p>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <div id="one" class="button">Info</div>
+          </a>
+          {% if emprolerank <= 2 %} <a href="/modInv">
+            <div id="one" class="button">Mod Inventory</div>
+            </a>
+            {% endif %}
+            {% if emprolerank <= 1 %} <a href="/employee">
+              <div id="one" class="button">Mod Employee</div>
+              </a>
+              {% endif %}
+
+        </div>
+
+        <div class="row" style="background-color: #76cab6; height: 92.3vh;">
+
+          <div class="column" style="width: 50%; height: auto; padding: 50px;">
+            <div style="height: auto; width: 100%; color: #ffffff;">
+
+              <h1 style="text-transform: uppercase; font-size: 50px;">{{empusername}}</h1>
+              <br><br><br>
+              <p style="text-transform: uppercase; letter-spacing: 3px;">
+                {% if emprolerank == 1 %}
+                <span style="color: #ffffff; font-size: 50px;">OWNER</span>
+                {% endif %}
+                {% if emprolerank == 2 %}
+                <span style="color: #ffffff; font-size: 50px;">Manager</span>
+                {% endif %}
+                {% if emprolerank == 3 %}
+                <span style="color: #ffffff; font-size: 50px;">Employee</span>
+                {% endif %}
+              </p>
+              <br>
+              <br>
+              <br>
+              <div style="border: 3px solid #ffffff; margin: 10px; padding: 10px; font-size: larger;">
+                <span
+                  style="border-bottom: 3px solid #ffffff; letter-spacing: 5px; padding-bottom: 2px; font-size: 30px;">INFO
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>
+                <br>
+                <br>
+                <br>
+
+                <ul class="alignMe">
+                  <li><b>Name</b> {{empname}}</li><br>
+                  <li><b>Id</b> {{empid}}</li><br>
+                  <li><b>Clearance Level</b> {{4 - emprolerank}}</li><br>
+                  <li><b>Phone number</b> {{empphno[0][0]}}
+                    {% for ph in range(1,sizeofphno) %}
+                    <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; {{empphno[ph][0]}}
+                    {% endfor %}
+                    <br>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="column" style="width: 50%; height: auto; padding: 50px;">
+            <center>
+              {% if emprolerank == 1 %}
+              <img src="https://cdn1.vectorstock.com/i/1000x1000/77/10/men-faceless-profile-vector-13567710.jpg"
+                width="50%" height="auto" alt="image">
+              {% endif %}
+              {% if emprolerank == 2 %}
+              <img src="https://cdn4.vectorstock.com/i/1000x1000/01/38/young-man-profile-vector-14770138.jpg"
+                width="50%" height="auto" alt="image">
+              {% endif %}
+              {% if emprolerank == 3 %}
+              <img src="https://cdn2.vectorstock.com/i/1000x1000/20/76/man-avatar-profile-vector-21372076.jpg"
+                width="50%" height="auto" alt="image">
+              {% endif %}
+            </center>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="{{url_for('static', filename='js/script_mainModal.js')}}"></script>
+
+</body>
+
+</html>

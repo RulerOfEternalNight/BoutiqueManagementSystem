@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Modify Inventory{% endblock %}
+{% block heading %}Modify Inventory{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div style="margin: 0px 250px;">
+    <form method="post">
+        <div class="mb-3">
+            <label for="pid" class="form-label">Product Id</label>
+            <input type="text" class="form-control" name="pid" required>
+        </div>
+        <div class="mb-3">
+            <label for="pc" class="form-label">Product Colour</label>
+            <input type="text" class="form-control" name="pc">
+        </div>
+        <br>
+        <br>
+        <div class="mb-3">
+            <label for="qis" class="form-label">quantity in stock</label>
+            <input type="text" class="form-control" name="qis">
+        </div>
+        <div class="mb-3">
+            <label for="ds" class="form-label">Dress size</label>
+            <input type="text" class="form-control" name="ds">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

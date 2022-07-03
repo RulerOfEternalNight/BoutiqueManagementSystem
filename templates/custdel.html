@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Delete Customers{% endblock %}
+{% block heading %}Delete Customers{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div style="margin: 0px 250px;">
+    <form method="post">
+        <div class="mb-3">
+            <label for="custid" class="form-label">Customer {Id} to be deleted</label>
+            <input type="text" class="form-control" name="custid">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Add Customers{% endblock %}
+{% block heading %}Add Customers{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div style="margin: 0px 250px;">
+    <form method="post">
+        <div class="mb-3">
+            <label for="custname" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" name="custname">
+        </div>
+        <div class="mb-3">
+            <label for="custemail" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="custemail">
+        </div>
+        <div class="mb-3">
+            <label for="addr1" class="form-label">Address 1 : House Number</label>
+            <input type="text" class="form-control" name="addr1">
+        </div>
+        <div class="mb-3">
+            <label for="addr2" class="form-label">Address 2 : Street</label>
+            <input type="text" class="form-control" name="addr2">
+        </div>
+        <div class="mb-3">
+            <label for="addr3" class="form-label">Address 3 : Pincode</label>
+            <input type="text" class="form-control" name="addr3">
+        </div>
+        <div class="mb-3">
+            <label for="phno" class="form-label">Phone Number<small style="font-size: x-small;">(seperate
+                    multiple numbers using a ',')</small></label>
+            <input type="text" class="form-control" name="phno">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}View User cart{% endblock %}
+{% block heading %}View User cart{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div style="margin: 0px 250px;">
+    <form method="post">
+        <div class="mb-3">
+            <label for="cartid" class="form-label">Customer cart{Id} to be viewed</label>
+            <input type="text" class="form-control" name="cartid">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

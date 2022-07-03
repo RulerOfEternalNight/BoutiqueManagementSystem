@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>AGHJ Boutique</title>
+  <link rel="shortcut icon" href="res/logofinal.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style_customers.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style_products.css')}}">
+  <style>
+    .search-input {
+      width: 200px;
+      height: 30px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .button-54 {
+      font-size: 16px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      padding: 13px 20px 13px;
+      outline: 0;
+      border: 1px solid rgb(0, 0, 0);
+      cursor: pointer;
+      position: relative;
+      background-color: rgba(0, 0,0,0);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-54:after {
+      content: "";
+      background-color: rgba(0, 255, 225);
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 7px;
+      left: 7px;
+      transition: 0.2s;
+    }
+
+    .button-54:hover:after {
+      top: 0px;
+      left: 0px;
+    }
+
+    @media (min-width: 768px) {
+      .button-54 {
+        padding: 13px 50px 13px;
+      }
+    }
+  </style>
+</head>
+
+
+
+<body>
+
+  <nav style="padding: 1rem 0 1rem 0;">
+    <div class="container">
+      <div class="grid">
+        <div class="column-xs-12 column-md-10">
+          <p id="highlight">AGHJ Boutique
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Customer Details</p>
+        </div>
+        <div class="column-xs-12 column-md-2">
+          <ul type="none">
+            <li><a href="/user">Back</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="container" style="max-width:1400px;">
+      <!--container mt-7-->
+      <div class="row">
+
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header border-0" style="display: flex;padding-top: 10px;padding-bottom: 10px;">
+              <h3 class="mb-0">Customer Data</h3>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush table-scroll">
+
+                <thead class="thead-light">
+                  <tr>
+                    <th>
+                      <input type="text" class="search-input" placeholder="Name">
+                    </th>
+                    <th>
+                      <input type="text" class="search-input" placeholder="Id">
+                    </th>
+                    <th>
+                      <input type="text" class="search-input" placeholder="Phone No">
+                    </th>
+                    <th>
+                      <input type="text" class="search-input" placeholder="e-mail">
+                    </th>
+                    <th>
+                      <input type="text" class="search-input" placeholder="address">
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody class="body-half-screen">
+
+                  {% for i in range(sizeofresult) %}
+                  <!--cell-->
+                  <tr>
+                    <td>
+                      {{finalresult[i][1]}}
+                    </td>
+
+                    <td id="main">
+                      {{finalresult[i][0]}}
+                    </td>
+
+                    <td>
+                      {% for j in range(phoneSize) %}
+                      {% if unique[i] == phone[j][0] %}
+                      {{phone[j][1]}} <br />
+                      {% endif %}
+                      {% endfor %}
+                    </td>
+
+                    <td>
+                      {{finalresult[i][2]}}
+                    </td>
+
+                    <td>
+                      {{finalresult[i][3]}},<br>{{finalresult[i][4]}},<br>{{finalresult[i][5]}}
+                    </td>
+                  </tr>
+                  <!--cell end-->
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; justify-content: center; margin: 50px;">
+    <button class="button-51" onclick="location.href = '/custAdd';">Add User Details</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="button-52" onclick="location.href = '/custDel';">Delete User Details</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="button-53" onclick="location.href = '/custMod';">Modify User Details</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="button-54" onclick="location.href = '/cart';">Show User Cart</button>
+  </div>
+
+  <script src="{{url_for('static', filename='js/search_table.js')}}"></script>
+
+</body>
+
+</html>
