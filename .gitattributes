@@ -1,1 +1,1 @@
-*.sql linguist-detectable=true
+MySQL/*.sql linguist-detectable=true
