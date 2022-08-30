@@ -2,6 +2,9 @@
 
 Software applications are used in every part of our daily life but there are few areas like show rooms, cloth stores still there is need to use management software for handling billing details, customers information, stock details. In order to full fill this gap we designed boutique management software application for cloth stores. This application will reduce manual work and maintain all details in database. Report generation for every month, week and year is possible with this software.
 
+### Video Demo: 
+[![Go To Video](#)](https://drive.google.com/file/d/1KZ89uy86f367tUAIyjWHk3vZDlN50aWR/view?usp=sharing)
+
 ## Functionalities of the system:
 
 In a boutique, there are many sections like Designer, New Born Fashion, Luxury, Readymade, Men, Women, Boys, Girls, etc. For each customer an Id is given (to uniquely identify them) to store their purchase and points. After a purchase is made, the customer is asked to fill in their details required to identify their unique ID to store their purchase (products that have been bought) and their price (as points). The price is converted into points and is stored in a relation and these points can be used by the customer to get discounts or any other gifts in their subsequent purchase. If any of purchased product is either damaged or need to be returned, a customer service section is provided where the product purchased can be returned or replaced based on the customers’ wish. While returning the product with the bill of purchase must be returned, so that, it is easier to confirm the purchase in the database. Our overall goal is to make things easier for the manager and employees to access data and information.
