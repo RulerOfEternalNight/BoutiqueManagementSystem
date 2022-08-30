@@ -4,7 +4,7 @@ Software applications are used in every part of our daily life but there are few
 
 ### Video Demo: 
 <b>click on the image to go to video</b>
-[![Go To Video](https://raw.githubusercontent.com/Jegadit/BoutiqueManagementSystem/main/BMS.png =250x)](https://drive.google.com/file/d/1KZ89uy86f367tUAIyjWHk3vZDlN50aWR/view?usp=sharing)
+[![Go To Video](https://raw.githubusercontent.com/Jegadit/BoutiqueManagementSystem/main/BMS.png)](https://drive.google.com/file/d/1KZ89uy86f367tUAIyjWHk3vZDlN50aWR/view?usp=sharing)
 
 ## Functionalities of the system:
 
