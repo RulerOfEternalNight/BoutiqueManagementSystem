@@ -1,6 +1,6 @@
 ## Introduction:
 
-Software applications are used in every part of our daily life but there are few areas like show rooms, cloth stores still there is need to use management software for handling billing details, customers information, stock details. In order to full fill this gap we designed boutique management software application for cloth stores. This application will reduce manual work and maintain all details in database. Report generation for every month, week and year is possible with this software.
+Software applications are mostly used in every part of our daily life but there are few areas like show rooms, cloth stores still there is need to use management software for handling billing details, customers information, stock details. In order to full fill this gap we designed boutique management software application for cloth stores. This application will reduce manual work and maintain all details in database. Report generation for every month, week and year is possible with this software.
 
 ### Video Demo: 
 <b>click to go to video</b>
